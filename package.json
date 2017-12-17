@@ -1,6 +1,6 @@
 {
   "name": "mathjs",
-  "version": "3.16.2",
+  "version": "3.18.0",
   "description": "Math.js is an extensive math library for JavaScript and Node.js. It features a flexible expression parser with support for symbolic computation, comes with a large set of built-in functions and constants, and offers an integrated solution to work with different data types like numbers, big numbers, complex numbers, fractions, units, and matrices.",
   "author": "Jos de Jong <wjosdejong@gmail.com> (https://github.com/josdejong)",
   "contributors": [
@@ -29,6 +29,7 @@
     "hamadu (https://github.com/hamadu)",
     "Harsh Gupta (https://github.com/hgupta9)",
     "Huseyn Guliyev (https://github.com/husayt)",
+    "Ivan Vergiliev (IvanVergiliev)",
     "Jim Garrison (https://github.com/garrison)",
     "Karl Lew (https://github.com/firepick1)",
     "Kenan Yildirim (https://github.com/KenanY)",
@@ -39,12 +40,14 @@
     "Mathias Polligkeit (https://github.com/woylie)",
     "Max Bruckner (https://github.com/FSMaxB)",
     "Maxence Dalmais (https://github.com/maxired)",
+    "Michael M. (https://github.com/Schnark)",
     "Mitchel Kelonye (https://github.com/kelonye)",
     "mtraynham (https://github.com/mtraynham)",
     "Niels Heisterkamp (https://github.com/nheisterkamp)",
     "Owen Versteeg (https://github.com/owenversteeg)",
     "Pavel Panchekha (https://github.com/pavpanchekha)",
     "Pat Grasso (https://github.com/patgrasso)",
+    "Paulo Buchsbaum (https://github.com/paulobuchsbaum)",
     "Pete Corey (https://github.com/pcorey)",
     "PJ Hampton (https://github.com/pjhampton )",
     "Retsam (https://github.com/Retsam)",
@@ -86,24 +89,24 @@
   ],
   "dependencies": {
     "complex.js": "2.0.4",
-    "decimal.js": "7.2.3",
-    "fraction.js": "4.0.2",
+    "decimal.js": "9.0.1",
+    "fraction.js": "4.0.4",
     "javascript-natural-sort": "0.7.1",
     "seed-random": "2.2.0",
-    "tiny-emitter": "2.0.0",
-    "typed-function": "0.10.5"
+    "tiny-emitter": "2.0.2",
+    "typed-function": "0.10.6"
   },
   "devDependencies": {
     "benchmark": "2.1.4",
-    "expr-eval": "1.0.1",
+    "expr-eval": "1.2.0",
     "glob": "7.1.2",
     "gulp": "3.9.1",
     "gulp-util": "3.0.8",
     "istanbul": "0.4.5",
-    "jsep": "0.3.0",
+    "jsep": "0.3.3",
     "math-expression-evaluator": "1.2.17",
     "mkdirp": "0.5.1",
-    "mocha": "3.4.2",
+    "mocha": "4.0.1",
     "ndarray": "1.0.18",
     "ndarray-determinant": "1.0.0",
     "ndarray-gemm": "1.0.0",
@@ -111,12 +114,12 @@
     "ndarray-pack": "1.2.1",
     "numericjs": "1.2.6",
     "pad-right": "0.2.2",
-    "q": "1.5.0",
+    "q": "1.5.1",
     "sylvester": "0.0.21",
-    "tar": "2.2.1",
-    "uglify-js": "2.7.5",
+    "tar": "4.1.1",
+    "uglify-js": "3.2.2",
     "underscore": "1.8.3",
-    "webpack": "2.6.1",
+    "webpack": "3.10.0",
     "zeros": "1.0.0"
   },
   "main": "./index",
@@ -137,9 +140,9 @@
     "url": "https://github.com/josdejong/mathjs/issues"
   },
   "directories": {
-    "doc": "docs",
-    "example": "examples",
-    "lib": "lib",
-    "test": "test"
+    "doc": "./docs",
+    "example": "./examples",
+    "lib": "./lib",
+    "test": "./test"
   }
 }

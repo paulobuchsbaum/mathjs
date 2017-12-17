@@ -53,6 +53,13 @@ describe('simplify', function() {
     assert.equal(fsimplified.eval()(5), 0.9933071490757153);
   });
 
+  it('should simplifyCore convert +unaryMinus to subtract', function() {
+      simplifyAndCompareEval('--2', '2');
+      var result = math.simplify('x + y + a', [math.simplify.simplifyCore], {a: -1}).toString()
+      assert.equal(result, "x + y - 1");
+  });
+
+
   it('should handle custom functions', function() {
     function doubleIt (x) { return x + x }
     var node = math.expression.node;
@@ -137,9 +144,25 @@ describe('simplify', function() {
   });
 
   it('should collect separated like factors', function() {
+    simplifyAndCompare('x*y*-x/(x^2)', '-y');
     simplifyAndCompare('x/2*x', 'x^2/2');
     simplifyAndCompare('x*2*x', '2*x^2');
-    simplifyAndCompare('x*y*-x/(x^2)', '-y');
+  });
+
+  it('should handle nested exponentiation', function() {
+    simplifyAndCompare('(x^2)^3', 'x^6');
+    simplifyAndCompare('(x^y)^z', 'x^(y*z)');
+    simplifyAndCompare('8 * x ^ 9 + 2 * (x ^ 3) ^ 3', '10 * x ^ 9');
+  });
+
+  it('should not run into an infinite recursive loop', function () {
+    simplifyAndCompare('2n - 1', '2 * n - 1');
+    simplifyAndCompare('16n - 1', '16 * n - 1');
+    simplifyAndCompare('16n / 1', '16 * n');
+    simplifyAndCompare('8 / 5n', 'n * 8 / 5');
+    simplifyAndCompare('8n - 4n', '4 * n');
+    simplifyAndCompare('8 - 4n', '8 - 4 * n');
+    simplifyAndCompare('8 - n', '8 - n');
   });
 
   it('should handle non-existing functions like a pro', function() {

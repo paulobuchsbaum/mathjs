@@ -1,6 +1,56 @@
 # History
 
 
+## 2017-12-16, version 3.18.0
+
+- Implemented function `rationalize`. Thanks @paulobuchsbaum.
+- Upgraded dependencies:
+  ```
+  decimal.js    7.2.3  →  9.0.1 (no breaking changes affecting mathjs) 
+  fraction.js   4.0.2  →  4.0.4 
+  tiny-emitter  2.0.0  →  2.0.2 
+  ```
+- Upgraded dev dependencies.
+- Fixed #975: a wrong example in the docs of lusolve.
+- Fixed #983: `pickRandom` returning an array instead of single value
+  when input was an array with just one value. Clarified docs.
+- Fixed #969: preven issues with yarn autoclean by renaming an
+  interally used folder "docs" to "embeddedDocs".
+
+
+## 2017-11-18, version 3.17.0
+
+- Improved `simplify` for nested exponentiations. Thanks @IvanVergiliev.
+- Fixed a security issue in `typed-function` allowing arbitrary code execution
+  in the JavaScript engine by creating a typed function with JavaScript code
+  in the name. Thanks Masato Kinugawa.
+- Fixed a security issue where forbidden properties like constructor could be
+  replaced by using unicode characters when creating an object. No known exploit,
+  but could possibly allow arbitrary code execution. Thanks Masato Kinugawa.
+
+
+## 2017-10-18, version 3.16.5
+
+- Fixed #954: Functions `add` and `multiply` not working when
+  passing three or more arrays or matrices.
+
+
+## 2017-10-01, version 3.16.4
+
+- Fixed #948, #949: function `simplify` returning wrong results or 
+  running into an infinite recursive loop. Thanks @ericman314.
+- Fixed many small issues in the embedded docs.  Thanks @Schnark.
+
+
+## 2017-08-28, version 3.16.3
+
+- Fixed #934: Wrong simplification of unary minus. Thanks @firepick1.
+- Fixed #933: function `simplify` reordering operations. Thanks @firepick1.
+- Fixed #930: function `isNaN` returning wrong result for complex 
+  numbers having just one of their parts (re/im) being `NaN`.
+- Fixed #929: `FibonacciHeap.isEmpty` returning wrong result.
+
+
 ## 2017-08-20, version 3.16.2
 
 - Fixed #924: a regression in `simplify` not accepting the signature
